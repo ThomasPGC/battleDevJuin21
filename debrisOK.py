@@ -41,3 +41,11 @@ for deb in dico_debris.keys():
     liste_coupe[deb] = coupe.count(deb)
 if Comparateur(liste_coupe, dico_debris):
     compteur_coupes +=1
+
+for i in range(nb_debris//2-1):
+    liste_coupe[orbite[i]] -=1
+    liste_coupe[orbite[i+(nb_debris//2)]] +=1
+    if Comparateur(liste_coupe, dico_debris):
+        compteur_coupes +=1
+        
+print(compteur_coupes*2)
